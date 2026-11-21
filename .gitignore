@@ -1,0 +1,10 @@
+state*.json
+*.bak.json
+*.tmp
+serve.log
+nohup.out
+node_modules/
+__pycache__/
+private/
+tests/node_modules/
+*-debug.log

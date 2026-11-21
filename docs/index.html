@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1526">
+<title>The Birthday Protocol</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎂%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/items.css">
+<link rel="stylesheet" href="css/special.css">
+<link rel="stylesheet" href="css/secret.css">
+<link rel="stylesheet" href="css/stats.css">
+</head>
+<body class="login">
+<main>
+  <header>
+    <h1><a href="#/kviz">The Birthday Protocol</a></h1>
+    <div class="sub" id="quizname"></div>
+    <div class="who" id="who"></div>
+    <div class="sync" id="sync"></div>
+  </header>
+  <div id="view"></div>
+</main>
+<nav class="tabbar" id="tabbar">
+  <a href="#/kviz" data-tab="kviz"><span>📋</span>Kviz</a>
+  <a href="#/poredak" data-tab="poredak"><span>🏆</span>Poredak</a>
+  <a href="#/ekipe" data-tab="ekipe"><span>👥</span>Ekipe</a>
+  <a href="#/stat" data-tab="stat"><span>📊</span>Statistika</a>
+  <a href="#/postavke" data-tab="postavke"><span>⚙️</span>Postavke</a>
+</nav>
+
+<script src="vendor/firebase-app-compat.js"></script>
+<script src="vendor/firebase-auth-compat.js"></script>
+<script src="vendor/firebase-database-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="fb.js"></script>
+<script src="login.js"></script>
+</body>
+</html>

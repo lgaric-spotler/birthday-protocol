@@ -1,0 +1,98 @@
+/* Statistika (stats_view.js). Prefix st-. Uses the CSS variables from style.css. */
+.st-root { display:block; }
+.st-card h2 { margin-bottom:4px; }
+.st-sub { margin:0 0 10px; font-size:13px; line-height:1.35; }
+.st-more { margin-top:4px; }
+.st-fact { margin-top:8px; font-size:14px; line-height:1.35; }
+.st-detail { font-size:13px; line-height:1.35; }
+.st-empty { padding:36px 16px; }
+.st-empty-t { font-size:20px; font-weight:800; margin-bottom:6px; }
+
+.st-dot { display:inline-block; width:11px; height:11px; border-radius:50%; flex:0 0 auto; margin-right:6px; vertical-align:middle; }
+.st-team { display:inline-flex; align-items:center; min-width:0; max-width:100%; }
+.st-tname { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; min-width:0; }
+
+/* podium */
+.st-podium { display:flex; align-items:flex-end; justify-content:center; gap:8px; margin:8px 0 14px; }
+.st-pod { flex:1 1 0; min-width:0; max-width:150px; text-align:center; }
+.st-pod-name { font-weight:700; font-size:14px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; padding:0 2px; }
+.st-pod-total { font-size:22px; font-weight:900; color:var(--accent2); line-height:1.2; margin-bottom:4px; }
+.st-pod-block {
+  display:flex; align-items:center; justify-content:center; font-size:24px; font-weight:900; color:var(--ink);
+  background:linear-gradient(180deg, var(--card2), var(--teal)); border:1px solid var(--line); border-top:4px solid var(--tc, var(--accent));
+  border-radius:10px 10px 0 0;
+}
+.st-p1 .st-pod-block { height:92px; }
+.st-p2 .st-pod-block { height:68px; }
+.st-p3 .st-pod-block { height:50px; }
+.st-p4 .st-pod-block { height:36px; font-size:18px; }
+.st-p1 .st-pod-total { color:var(--orange); }
+
+.st-stand { list-style:none; margin:0; padding:0; }
+.st-stand li { display:flex; align-items:center; gap:8px; min-height:44px; padding:6px 4px; border-top:1px solid var(--line); }
+.st-stand li:first-child { border-top:0; }
+.st-place { width:28px; font-weight:800; color:var(--mute); }
+.st-sname { flex:1; min-width:0; display:flex; align-items:center; font-weight:600; }
+.st-gap { min-width:34px; text-align:right; }
+.st-total { min-width:42px; text-align:right; font-size:20px; }
+
+/* highlights */
+.st-hl { margin:6px 0 0; padding:0; list-style:none; }
+.st-hl li { position:relative; padding:9px 4px 9px 22px; border-top:1px solid var(--line); line-height:1.4; }
+.st-hl li:first-child { border-top:0; }
+.st-hl li::before { content:""; position:absolute; left:4px; top:16px; width:8px; height:8px; border-radius:50%; background:var(--accent); }
+
+/* tables (heat, power-ups, duels, mini-games) */
+.st-scroll { overflow-x:auto; margin:0 -4px; padding:0 4px; -webkit-overflow-scrolling:touch; }
+.st-table { border-collapse:separate; border-spacing:2px; width:100%; font-size:14px; }
+.st-table th, .st-table td { text-align:center; padding:6px 6px; border-radius:6px; white-space:nowrap; }
+.st-table thead th { font-size:12px; font-weight:700; color:var(--mute); vertical-align:bottom; max-width:92px; }
+.st-table thead th .st-tname { max-width:70px; }
+.st-table .st-rcol { text-align:left; position:sticky; left:0; z-index:1; background:var(--card); color:var(--ink); min-width:92px; padding-left:4px; }
+.st-table .st-rcol b { display:block; font-size:14px; }
+.st-table .st-rcol small, .st-table td small { color:var(--mute); font-size:11px; font-weight:400; }
+.st-table .st-rcol small { display:block; max-width:130px; overflow:hidden; text-overflow:ellipsis; }
+.st-table td { background:var(--field); min-width:56px; }
+.st-table td b { font-size:15px; }
+.st-cell.win b { color:#fff; text-shadow:0 0 8px rgba(76,195,232,.9); }
+.st-cell.win { outline:2px solid var(--accent); outline-offset:-2px; }
+.st-sum td, .st-sum th { border-top:2px solid var(--line); background:transparent; }
+.st-sum td b { color:var(--accent2); font-size:16px; }
+.st-table td.ok { background:rgba(90,209,154,.22); }
+.st-table td.bad { background:rgba(224,89,74,.22); }
+.st-duel td, .st-pu td { white-space:normal; }
+
+/* bars */
+.st-bar { flex:1 1 90px; min-width:60px; height:12px; background:var(--field); border-radius:8px; overflow:hidden; border:1px solid var(--line); }
+.st-fill { height:100%; border-radius:8px; min-width:0; }
+.st-brow { display:flex; align-items:center; gap:10px; min-height:44px; }
+.st-brow .st-team { flex:0 0 34%; max-width:34%; font-weight:600; }
+.st-num { min-width:44px; text-align:right; font-size:16px; }
+.st-krow { padding:6px 0 8px; border-top:1px solid var(--line); }
+.st-krow:first-of-type { border-top:0; }
+.st-krow .st-detail { padding-left:2px; }
+.st-best { color:var(--ok); }
+.st-worst { color:var(--bad); }
+
+/* chart */
+.st-chart { margin:4px -2px 6px; }
+.st-svg { display:block; width:100%; height:auto; }
+.st-grid { stroke:var(--line); stroke-width:1; opacity:.6; }
+.st-axis { stroke:var(--mute); stroke-width:1; opacity:.8; }
+.st-ytick, .st-xtick { fill:var(--mute); font-size:9px; font-family:inherit; }
+.st-legend { display:flex; flex-wrap:wrap; gap:6px 14px; margin:4px 0 6px; font-size:14px; }
+.st-lg { display:inline-flex; align-items:center; gap:4px; }
+.st-chg { display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
+.st-chg .pill { display:inline-flex; align-items:center; }
+
+/* lists */
+.st-q { list-style:none; margin:0; padding:0; }
+.st-q li { display:flex; gap:10px; align-items:flex-start; padding:8px 0; border-top:1px solid var(--line); }
+.st-q li:first-child { border-top:0; }
+.st-q .badge1, .st-q .badge3 { flex:0 0 auto; min-width:34px; text-align:center; }
+.st-qtext { line-height:1.35; }
+.st-line { display:flex; flex-wrap:wrap; align-items:center; gap:4px 10px; min-height:44px; padding:6px 0; border-top:1px solid var(--line); }
+.st-line:first-of-type { border-top:0; }
+.st-line .st-team { flex:0 0 34%; max-width:34%; font-weight:600; }
+.st-line .st-num { margin-left:auto; }
+.st-line .pill.bad { color:var(--bad); }
